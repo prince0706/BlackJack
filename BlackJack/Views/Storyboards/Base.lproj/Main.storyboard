@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BlackJack" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dealer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KdW-ad-5zm">
+                                <rect key="frame" x="182" y="97" width="50" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="41l-G7-d50"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ocx-4u-VO5">
+                                <rect key="frame" x="20" y="148" width="374" height="100"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="0Cy-FP-WQN"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="btT-S6-5KI">
+                                    <size key="itemSize" width="71" height="100"/>
+                                    <size key="estimatedItemSize" width="71" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CardCellID" id="Gnf-I1-JAJ" customClass="CardCell" customModule="BlackJack" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="71" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="P4v-uw-VTB">
+                                            <rect key="frame" x="0.0" y="0.0" width="71" height="100"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hae-ZH-hU9">
+                                                    <rect key="frame" x="0.0" y="0.0" width="71" height="100"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="71" id="Xun-Ea-jkv"/>
+                                                        <constraint firstAttribute="height" constant="100" id="zHw-sn-BwQ"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Hae-ZH-hU9" firstAttribute="top" secondItem="P4v-uw-VTB" secondAttribute="top" id="D9f-YJ-WaG"/>
+                                                <constraint firstAttribute="trailing" secondItem="Hae-ZH-hU9" secondAttribute="trailing" id="JhN-Ed-sYh"/>
+                                                <constraint firstAttribute="bottom" secondItem="Hae-ZH-hU9" secondAttribute="bottom" id="Q6O-vI-vpl"/>
+                                                <constraint firstItem="Hae-ZH-hU9" firstAttribute="leading" secondItem="P4v-uw-VTB" secondAttribute="leading" id="gQQ-7K-cnY"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="71" height="100"/>
+                                        <connections>
+                                            <outlet property="cardImageView" destination="Hae-ZH-hU9" id="qKS-KC-FC9"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="it3-Xm-cnH"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="cSr-1D-b1R"/>
+                                </connections>
+                            </collectionView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Splitted hand" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Jl-ZQ-dJ4">
+                                <rect key="frame" x="130.5" y="570" width="153" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="051-zT-Drw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="z1o-5d-N9f">
+                                <rect key="frame" x="20" y="440" width="374" height="100"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="dFT-XX-CJg"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="eCL-76-sgy">
+                                    <size key="itemSize" width="71" height="100"/>
+                                    <size key="estimatedItemSize" width="71" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CardCellID" id="UA4-zm-K5l" customClass="CardCell" customModule="BlackJack" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="71" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="CcF-Uo-JyN">
+                                            <rect key="frame" x="0.0" y="0.0" width="71" height="100"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rmk-dj-zbF">
+                                                    <rect key="frame" x="0.0" y="0.0" width="71" height="100"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="100" id="0g6-3I-MwQ"/>
+                                                        <constraint firstAttribute="width" constant="71" id="USe-Wu-vbB"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Rmk-dj-zbF" secondAttribute="bottom" id="HGa-3D-ORD"/>
+                                                <constraint firstItem="Rmk-dj-zbF" firstAttribute="top" secondItem="CcF-Uo-JyN" secondAttribute="top" id="IQA-zP-DMH"/>
+                                                <constraint firstItem="Rmk-dj-zbF" firstAttribute="leading" secondItem="CcF-Uo-JyN" secondAttribute="leading" id="YMF-ZV-5aD"/>
+                                                <constraint firstAttribute="trailing" secondItem="Rmk-dj-zbF" secondAttribute="trailing" id="oVC-8x-A9v"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="71" height="100"/>
+                                        <connections>
+                                            <outlet property="cardImageView" destination="Rmk-dj-zbF" id="BcO-hH-Ltn"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="aU3-vh-SmC"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Wvy-vj-6zU"/>
+                                </connections>
+                            </collectionView>
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="WcG-ZU-Giq">
+                                <rect key="frame" x="20" y="350" width="374" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ZH-qz-BC8">
+                                        <rect key="frame" x="0.0" y="0.0" width="82.5" height="50"/>
+                                        <state key="normal" title="Hit"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusValue">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColour">
+                                                <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="spliitedPlayerHitButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hYg-qM-TnN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vay-Ra-5HC">
+                                        <rect key="frame" x="97.5" y="0.0" width="82" height="50"/>
+                                        <state key="normal" title="Stand"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColour">
+                                                <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="spliitedPlayerStandButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kuv-kG-ioh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQ6-A3-x88">
+                                        <rect key="frame" x="194.5" y="0.0" width="82.5" height="50"/>
+                                        <state key="normal" title="Split"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColour">
+                                                <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="spliitedPlayerSplitButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YiA-wA-cbI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GMI-8V-xOX">
+                                        <rect key="frame" x="292" y="0.0" width="82" height="50"/>
+                                        <state key="normal" title="Surrender"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColour">
+                                                <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="spliitedPlayerSurrenderButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RQu-SK-oRv"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="fvr-b7-qf3"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="keV-f1-leL">
+                                <rect key="frame" x="183.5" y="781" width="47" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="fCo-RP-Pgu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="r7z-ph-74u">
+                                <rect key="frame" x="20" y="651" width="374" height="100"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="ZkR-ru-pao"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="kRd-DB-OaE">
+                                    <size key="itemSize" width="71" height="100"/>
+                                    <size key="estimatedItemSize" width="71" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CardCellID" id="NIg-mQ-oUO" customClass="CardCell" customModule="BlackJack" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="71" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="p6x-fe-TLf">
+                                            <rect key="frame" x="0.0" y="0.0" width="71" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FDK-Pv-nzH">
+                                                    <rect key="frame" x="0.0" y="0.0" width="71" height="100"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="71" id="GbV-2x-hVY"/>
+                                                        <constraint firstAttribute="height" constant="100" id="eDK-ph-PfU"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="FDK-Pv-nzH" firstAttribute="top" secondItem="p6x-fe-TLf" secondAttribute="top" id="I1V-mz-pGj"/>
+                                                <constraint firstItem="FDK-Pv-nzH" firstAttribute="leading" secondItem="p6x-fe-TLf" secondAttribute="leading" id="SmT-C9-zrC"/>
+                                                <constraint firstAttribute="trailing" secondItem="FDK-Pv-nzH" secondAttribute="trailing" id="fs6-0g-ObT"/>
+                                                <constraint firstAttribute="bottom" secondItem="FDK-Pv-nzH" secondAttribute="bottom" id="ymN-8I-m0C"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="71" height="100"/>
+                                        <connections>
+                                            <outlet property="cardImageView" destination="FDK-Pv-nzH" id="Fy4-2T-yVZ"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="TwD-Lb-SI8"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="BNJ-od-vbc"/>
+                                </connections>
+                            </collectionView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="zH0-CP-YAW">
+                                <rect key="frame" x="20" y="811" width="374" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xr1-93-M4G">
+                                        <rect key="frame" x="0.0" y="0.0" width="82.5" height="50"/>
+                                        <state key="normal" title="Hit"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusValue">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColour">
+                                                <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="hitButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gqe-1s-wxb"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdK-0U-QyV">
+                                        <rect key="frame" x="97.5" y="0.0" width="82" height="50"/>
+                                        <state key="normal" title="Stand"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColour">
+                                                <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="standButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rFk-hY-Des"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Grn-St-K1w">
+                                        <rect key="frame" x="194.5" y="0.0" width="82.5" height="50"/>
+                                        <state key="normal" title="Split"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColour">
+                                                <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="splitButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JjN-uE-hNG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NQt-JT-6hr">
+                                        <rect key="frame" x="292" y="0.0" width="82" height="50"/>
+                                        <state key="normal" title="Surrender"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColour">
+                                                <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="surrenderButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M7h-RG-Z8B"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Z4Q-67-QwW"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="r7z-ph-74u" secondAttribute="trailing" constant="20" id="21S-5d-3Br"/>
+                            <constraint firstItem="ocx-4u-VO5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="22B-Rw-mFJ"/>
+                            <constraint firstItem="WcG-ZU-Giq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="7Su-HH-AQ1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="z1o-5d-N9f" secondAttribute="trailing" constant="20" id="7cC-WA-rcT"/>
+                            <constraint firstItem="z1o-5d-N9f" firstAttribute="top" secondItem="WcG-ZU-Giq" secondAttribute="bottom" constant="40" id="7dO-wy-Owc"/>
+                            <constraint firstItem="keV-f1-leL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9iW-tG-Ud8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zH0-CP-YAW" secondAttribute="trailing" constant="20" id="DGb-ea-XIo"/>
+                            <constraint firstItem="z1o-5d-N9f" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Dom-xo-Ohn"/>
+                            <constraint firstItem="2Jl-ZQ-dJ4" firstAttribute="top" secondItem="z1o-5d-N9f" secondAttribute="bottom" constant="30" id="FPQ-or-2oa"/>
+                            <constraint firstItem="zH0-CP-YAW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="MWQ-L5-J6d"/>
+                            <constraint firstItem="r7z-ph-74u" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Rg0-83-gs1"/>
+                            <constraint firstItem="2Jl-ZQ-dJ4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="V6w-yQ-qnC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="keV-f1-leL" secondAttribute="bottom" constant="60" id="WPV-LY-hIa"/>
+                            <constraint firstItem="keV-f1-leL" firstAttribute="top" secondItem="r7z-ph-74u" secondAttribute="bottom" constant="30" id="XDg-m6-ewy"/>
+                            <constraint firstItem="KdW-ad-5zm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XwF-15-hfu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ocx-4u-VO5" secondAttribute="trailing" constant="20" id="ZcT-ep-pHJ"/>
+                            <constraint firstItem="zH0-CP-YAW" firstAttribute="top" secondItem="r7z-ph-74u" secondAttribute="bottom" constant="60" id="a2i-K5-AEv"/>
+                            <constraint firstItem="ocx-4u-VO5" firstAttribute="top" secondItem="KdW-ad-5zm" secondAttribute="bottom" constant="30" id="ixe-SW-N1d"/>
+                            <constraint firstItem="r7z-ph-74u" firstAttribute="top" secondItem="2Jl-ZQ-dJ4" secondAttribute="bottom" constant="60" id="jJa-o6-Dh8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WcG-ZU-Giq" secondAttribute="trailing" constant="20" id="uA7-yJ-A5d"/>
+                            <constraint firstItem="KdW-ad-5zm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="53" id="uE8-pL-dq3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="PlayerActions" destination="zH0-CP-YAW" id="F5N-Wo-gfr"/>
+                        <outlet property="dealerHandCollectionView" destination="ocx-4u-VO5" id="Heq-2x-iK6"/>
+                        <outlet property="playerHandCollectionView" destination="r7z-ph-74u" id="irf-NS-x7Z"/>
+                        <outlet property="playerSplitHandCollectionView" destination="z1o-5d-N9f" id="kbG-SW-dt3"/>
+                        <outlet property="playerSplittedHandLabel" destination="2Jl-ZQ-dJ4" id="OAz-0c-E4G"/>
+                        <outlet property="splitButton" destination="Grn-St-K1w" id="7F2-EZ-bAW"/>
+                        <outlet property="splittedPlayerActions" destination="WcG-ZU-Giq" id="FDU-XV-XQf"/>
+                        <outlet property="splittedPlayerSplitButton" destination="lQ6-A3-x88" id="RUh-WV-fFZ"/>
+                        <outlet property="standButton" destination="pdK-0U-QyV" id="pko-IG-dic"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="81"/>
+        </scene>
+    </scenes>
+</document>
